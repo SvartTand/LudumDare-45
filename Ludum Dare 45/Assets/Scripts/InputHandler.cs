@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour {
 
@@ -8,8 +9,12 @@ public class InputHandler : MonoBehaviour {
 
     public int brushSize;
 
-	// Use this for initialization
-	void Start () {
+    public Button brush1;
+    public Button brush2;
+    public Button brush3;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 
@@ -48,5 +53,27 @@ public class InputHandler : MonoBehaviour {
     public void SpeedUpPressed()
     {
         Time.timeScale = 1.5f;
+    }
+
+    public void BrushButtonPressed1()
+    {
+        brushSize = 1;
+        brush1.interactable = false;
+        brush2.interactable = true;
+        brush3.interactable = true;
+    }
+    public void BrushButtonPressed2()
+    {
+        brushSize = 2;
+        brush1.interactable = true;
+        brush2.interactable = false;
+        brush3.interactable = true;
+    }
+    public void BrushButtonPressed3()
+    {
+        brushSize = 3;
+        brush1.interactable = true;
+        brush2.interactable = true;
+        brush3.interactable = false;
     }
 }

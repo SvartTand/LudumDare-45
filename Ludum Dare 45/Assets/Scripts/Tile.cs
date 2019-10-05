@@ -27,8 +27,9 @@ public class Tile : MonoBehaviour {
         //Debug.Log(type.updInterval);
         if(timer >= type.updInterval)
         {
-            type.UpdateTile(this, neighbours);
             type.CheckNeigbourConnections(this);
+            type.UpdateTile(this, neighbours);
+            
             timer = 0;
         }
 	}
@@ -52,7 +53,11 @@ public class Tile : MonoBehaviour {
         {
             for(int i = 0; i < neighbours.Length; i++)
             {
-                neighbours[i].SetNeighbours(newType, brushSize - 1);
+                if(neighbours[i].type.typeId != "B")
+                {
+                    neighbours[i].SetNeighbours(newType, brushSize - 1);
+                }
+                
             }
         }
         Debug.Log(pos);
@@ -78,7 +83,11 @@ public class Tile : MonoBehaviour {
         {
             for (int i = 0; i < neighbours.Length; i++)
             {
-                neighbours[i].SetNeighbours(newType, depth - 1);
+                if (neighbours[i].type.typeId != "B")
+                {
+                    neighbours[i].SetNeighbours(newType, depth - 1);
+                }
+                
             }
         }
     }

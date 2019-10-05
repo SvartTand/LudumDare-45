@@ -77,7 +77,7 @@ public class TypeWater : Type {
                 int r = Random.Range(0, chanceToCreateSand);
                 if(r == 1)
                 {
-                    tile.neighbours[i].SetType(listOfTypes.GetType("Sand"));
+                    tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.SAND]);
                 }
             }
 
@@ -86,7 +86,7 @@ public class TypeWater : Type {
                 int r = Random.Range(0, chanceToCreateSteamWithLava);
                 if (r == 1)
                 {
-                    tile.SetType(listOfTypes.GetType("Steam"));
+                    tile.SetType(listOfTypes.types[ListOfTypes.STEAM]);
                 }
             }
         }

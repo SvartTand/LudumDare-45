@@ -10,7 +10,7 @@ public class TypeStone : Type {
     {
         if(CalculatePressure(tile) > pressureToCreateLava)
         {
-            tile.SetType(listOfTypes.GetType("Lava"));
+            tile.SetType(listOfTypes.types[ListOfTypes.LAVA]);
         }
     }
 

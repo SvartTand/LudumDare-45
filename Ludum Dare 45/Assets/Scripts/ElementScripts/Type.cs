@@ -16,7 +16,7 @@ public class Type : MonoBehaviour {
     public int rigidity;
     public int weight;
 
-    public enum State { Solid, Liquid, Gas};
+    public enum State { Solid, Liquid, Gas, Plasma};
     public State myState;
 
 
@@ -171,7 +171,7 @@ public class Type : MonoBehaviour {
     public int CalculatePressure(Tile t)
     {
         int pressure = 0;
-        while(t.neighbours[Tile.N].type.typeId != "B")
+        while(t.neighbours[Tile.N] != null && t.neighbours[Tile.N].type.typeId != "B")
         {
             pressure += t.neighbours[Tile.N].type.weight;
             t = t.neighbours[Tile.N];

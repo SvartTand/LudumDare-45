@@ -65,9 +65,10 @@ public class TypeEarth : Type {
         {
             return;
         }
-        if (press > pressureToCreateStone)
+        if (press >= pressureToCreateStone)
         {
-            tile.SetType(listOfTypes.GetType("Stone"));
+            tile.SetType(listOfTypes.types[ListOfTypes.STONE]);
+            return;
         }
 
         if(press <= weight * 2)
