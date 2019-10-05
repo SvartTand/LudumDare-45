@@ -6,6 +6,8 @@ public class InputHandler : MonoBehaviour {
 
     public Type type;
 
+    public int brushSize;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -23,10 +25,15 @@ public class InputHandler : MonoBehaviour {
             {
                 if (hit.transform.tag == "Tile")
                 {
-                    hit.transform.gameObject.GetComponent<Tile>().IsClickedOn(type);
+                    hit.transform.gameObject.GetComponent<Tile>().IsClickedOn(type, brushSize);
                 }
                 //Debug.Log(hit.transform.name);
             }
         }
+    }
+
+    public void ElementSelected(Type t)
+    {
+        type = t;
     }
 }
