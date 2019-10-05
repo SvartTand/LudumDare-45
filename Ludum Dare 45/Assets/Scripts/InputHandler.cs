@@ -36,4 +36,17 @@ public class InputHandler : MonoBehaviour {
     {
         type = t;
     }
+
+    public void PausePressed()
+    {
+        Time.timeScale = 0;
+    }
+    public void PlayPressed()
+    {
+        Time.timeScale = 1.0f;
+    }
+    public void SpeedUpPressed()
+    {
+        Time.timeScale = 1.5f;
+    }
 }
