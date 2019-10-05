@@ -21,7 +21,7 @@ public class TypeWater : Type {
 
     public override void UpdateTile(Tile tile, Tile[] neighbours)
     {
-        Debug.Log("Uppdating Water");
+        //Debug.Log("Uppdating Water");
         //if gas is under
         if(neighbours[Tile.S].type.myState == State.Gas)
         {

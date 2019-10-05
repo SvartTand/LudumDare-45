@@ -18,7 +18,7 @@ public class TypeStone : Type {
     {
         Debug.Log("Uppdating Stone");
         //if gas is under
-        if (neighbours[Tile.S].type.myState == State.Gas )
+        if (neighbours[Tile.S].type.myState == State.Gas || neighbours[Tile.S].type.myState == State.Animal)
         {
             //Fall down
             neighbours[Tile.S].SetType(tile.type);

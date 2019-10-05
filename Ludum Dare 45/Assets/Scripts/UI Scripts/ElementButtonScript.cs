@@ -32,7 +32,7 @@ public class ElementButtonScript : MonoBehaviour {
 
     void TaskOnClick()
     {
-        handler.ElementSelected(type);
+        handler.ElementSelected(type, button);
     }
 
 }

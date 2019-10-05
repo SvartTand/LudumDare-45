@@ -21,7 +21,16 @@ public class TypeLightning : Type {
             {
                 if(neighbours[r].type.myState != State.Plasma)
                 {
+                    if (neighbours[r].type == listOfTypes.types[ListOfTypes.WATER])
+                    {
+                        neighbours[r].SetType(listOfTypes.types[ListOfTypes.ALGEE]);
+                    }
+                    else if (neighbours[r].type.burnable)
+                    {
+                        neighbours[r].SetType(listOfTypes.types[ListOfTypes.FIRE]);
+                    }
                     GroundHit(tile);
+                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraHandler>().Shake(0.7f, 0.5f);
                 }
                 
             }
@@ -36,7 +45,24 @@ public class TypeLightning : Type {
             {
                 if (neighbours[Tile.S].type.myState != State.Plasma)
                 {
+
+                    if (neighbours[Tile.S].type == listOfTypes.types[ListOfTypes.WATER])
+                    {
+                        neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.ALGEE]);
+                    }
+                    else if (neighbours[Tile.S].type == listOfTypes.types[ListOfTypes.CACTUS]) {
+                        neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.ANIMAL]);
+                    }
+                    else if (neighbours[Tile.S].type == listOfTypes.types[ListOfTypes.ANIMAL])
+                    {
+                        neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.MAN]);
+                    }
+                    else if (neighbours[Tile.S].type.burnable)
+                    {
+                        neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.FIRE]);
+                    }
                     GroundHit(tile);
+                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraHandler>().Shake(0.01f, 0.2f);
                 }
             }
         }

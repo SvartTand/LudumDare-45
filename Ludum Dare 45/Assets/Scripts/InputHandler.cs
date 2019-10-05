@@ -13,6 +13,12 @@ public class InputHandler : MonoBehaviour {
     public Button brush2;
     public Button brush3;
 
+    public Button Pause;
+    public Button Play;
+    public Button Forward;
+
+    private Button previousButton;
+
     // Use this for initialization
     void Start () {
 		
@@ -37,22 +43,37 @@ public class InputHandler : MonoBehaviour {
         }
     }
 
-    public void ElementSelected(Type t)
+    public void ElementSelected(Type t, Button b)
     {
+        if(previousButton != null)
+        {
+            previousButton.interactable = true;
+        }
+        previousButton = b;
+        previousButton.interactable = false;
         type = t;
     }
 
     public void PausePressed()
     {
         Time.timeScale = 0;
+        Pause.interactable = false;
+        Play.interactable = true;
+        Forward.interactable = true;
     }
     public void PlayPressed()
     {
         Time.timeScale = 1.0f;
+        Pause.interactable = true;
+        Play.interactable = false;
+        Forward.interactable = true;
     }
     public void SpeedUpPressed()
     {
         Time.timeScale = 1.5f;
+        Pause.interactable = true;
+        Play.interactable = true;
+        Forward.interactable = false;
     }
 
     public void BrushButtonPressed1()

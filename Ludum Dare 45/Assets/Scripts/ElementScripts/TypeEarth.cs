@@ -71,7 +71,7 @@ public class TypeEarth : Type {
             return;
         }
 
-        if(press <= weight * 2)
+        if(press <= weight * 1)
         {
             c = depthColor[0];
             tile.SetSprite(sprite, c);

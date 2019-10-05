@@ -16,13 +16,56 @@ public class Type : MonoBehaviour {
     public int rigidity;
     public int weight;
 
-    public enum State { Solid, Liquid, Gas, Plasma};
+    public bool burnable;
+
+    public enum State { Solid, Liquid, Gas, Plasma, Animal};
     public State myState;
 
 
     public virtual void UpdateTile(Tile tile, Tile[] neighbours)
     {
-        if(myState == State.Gas)
+        if (myState == State.Animal)
+        {
+            if(neighbours[Tile.N].type.myState != State.Gas)
+            {
+                //Kill animal
+                tile.SetType(listOfTypes.types[0]);
+            }
+
+            if (neighbours[Tile.S].type.myState == State.Solid)
+            {
+                List<Tile> possibleMoves = new List<Tile>();
+
+                for(int i = 1; i<neighbours.Length; i++)
+                {
+                    if (neighbours[i].type.myState == State.Gas && neighbours[i].type.typeId != "B")
+                    {
+                        possibleMoves.Add(neighbours[i]);
+
+                    }else if(neighbours[i].type.myState == State.Solid && neighbours[i].type.typeId != "B")
+                    {
+                        if(neighbours[i].neighbours[Tile.N].type.myState == State.Gas && neighbours[i].neighbours[Tile.N] != tile)
+                        {
+                            possibleMoves.Add(neighbours[i].neighbours[Tile.N]);
+                        }
+                    }
+                }
+
+                int r = Random.Range(0, possibleMoves.Count);
+                possibleMoves[r].SetType(tile.type);
+                tile.SetType(listOfTypes.types[0]);
+
+            }
+            else if (neighbours[Tile.S].type.myState == State.Gas)
+            {
+                neighbours[Tile.S].SetType(tile.type);
+                neighbours[Tile.S].direction = 0;
+                tile.SetType(listOfTypes.types[0]);
+                tile.direction = 0;
+            }
+        }
+
+            if (myState == State.Gas)
         {
             List<int> possibleMovments = new List<int>();
             if (neighbours[Tile.N].type.myState == State.Gas && neighbours[Tile.N].type.typeId != tile.type.typeId)
@@ -95,9 +138,9 @@ public class Type : MonoBehaviour {
         }
         else if(myState == State.Solid)
         {
-            Debug.Log("Uppdating Earth");
+            //Debug.Log("Uppdating Earth");
             //if gas is under
-            if (neighbours[Tile.S].type.myState == State.Gas)
+            if (neighbours[Tile.S].type.myState == State.Gas || neighbours[Tile.S].type.myState == State.Animal)
             {
                 //Fall down
                 neighbours[Tile.S].SetType(tile.type);
@@ -183,4 +226,6 @@ public class Type : MonoBehaviour {
 
         return pressure;
     }
+
+    
 }

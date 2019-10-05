@@ -16,6 +16,8 @@ public class Tile : MonoBehaviour {
     public int direction;
     public int prevPressure;
 
+    public float typeCounter;
+
 	// Use this for initialization
 	void Start () {
         
@@ -74,6 +76,7 @@ public class Tile : MonoBehaviour {
         type = t;
         type.FirstUppdate(this);
         timer = 0;
+        typeCounter = 0;
     }
 
     public void SetNeighbours(Type newType, int depth)
