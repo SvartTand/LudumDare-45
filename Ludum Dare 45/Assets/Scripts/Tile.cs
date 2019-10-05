@@ -10,6 +10,9 @@ public class Tile : MonoBehaviour {
 
     public static int N = 0, E = 1, S = 2, W = 3;
 
+    public Type type;
+    private float timer = 0;
+
 	// Use this for initialization
 	void Start () {
         
@@ -17,12 +20,19 @@ public class Tile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        timer += Time.deltaTime;
+        //Debug.Log(type.updInterval);
+        if(timer >= type.updInterval)
+        {
+            type.UpdateTile(this, neighbours);
+            timer = 0;
+        }
 	}
 
-    public void Init(int x, int y)
+    public void Init(int x, int y, Type t)
     {
         pos = new Vector2(x, y);
+        SetType(t);
     }
 
     public void AddNeighbour(Tile neighbour, int p)
@@ -31,8 +41,22 @@ public class Tile : MonoBehaviour {
         neighbours[p] = neighbour;
     }
 
-    public void IsClickedOn()
+    public void IsClickedOn(Type newType)
     {
+        SetType(newType);
         Debug.Log(pos);
+    }
+
+    public void SetSprite(Sprite sp, Color c)
+    {
+        gameObject.GetComponent<SpriteRenderer>().sprite = sp;
+        gameObject.GetComponent<SpriteRenderer>().color = c;
+    }
+
+    public void SetType(Type t)
+    {
+        type = t;
+        type.FirstUppdate(this);
+        timer = 0;
     }
 }

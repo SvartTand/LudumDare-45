@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour {
 
-
+    public Type type;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class InputHandler : MonoBehaviour {
             {
                 if (hit.transform.tag == "Tile")
                 {
-                    hit.transform.gameObject.GetComponent<Tile>().IsClickedOn();
+                    hit.transform.gameObject.GetComponent<Tile>().IsClickedOn(type);
                 }
                 //Debug.Log(hit.transform.name);
             }
