@@ -36,6 +36,11 @@ public class Tile : MonoBehaviour {
         }
 	}
 
+    public Vector2 GetPos()
+    {
+        return pos;
+    }
+
     public void Init(int x, int y, Type t)
     {
         pos = new Vector2(x, y);
@@ -44,7 +49,7 @@ public class Tile : MonoBehaviour {
 
     public void AddNeighbour(Tile neighbour, int p)
     {
-        Debug.Log(p + ", " + neighbours.Length);
+        //Debug.Log(p + ", " + neighbours.Length);
         neighbours[p] = neighbour;
     }
 
@@ -62,7 +67,7 @@ public class Tile : MonoBehaviour {
                 
             }
         }
-        Debug.Log(pos);
+        //Debug.Log(pos);
     }
 
     public void SetSprite(Sprite sp, Color c)

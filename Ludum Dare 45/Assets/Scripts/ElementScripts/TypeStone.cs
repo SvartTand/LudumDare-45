@@ -5,12 +5,38 @@ using UnityEngine;
 public class TypeStone : Type {
 
     public int pressureToCreateLava;
+    public List<Color> colors;
 
     public override void CheckNeigbourConnections(Tile tile)
     {
-        if(CalculatePressure(tile) > pressureToCreateLava)
+        int press = CalculatePressure(tile);
+        if (press == tile.prevPressure)
+        {
+            return;
+        }
+        if (press >= pressureToCreateLava)
         {
             tile.SetType(listOfTypes.types[ListOfTypes.LAVA]);
+            return;
+        }
+
+        if (press <= weight * 1)
+        {
+            c = colors[0];
+            tile.SetSprite(sprite, c);
+            return;
+        }
+        if (press <= weight * 3)
+        {
+            c = colors[1];
+            tile.SetSprite(sprite, c);
+            return;
+        }
+        else
+        {
+            c = colors[2];
+            tile.SetSprite(sprite, c);
+            return;
         }
     }
 

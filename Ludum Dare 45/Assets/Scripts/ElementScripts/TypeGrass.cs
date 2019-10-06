@@ -5,6 +5,7 @@ using UnityEngine;
 public class TypeGrass : Type {
 
     public int chanceOfSpreading;
+    public int chanceOfTree;
     public List<Sprite> anim = new List<Sprite>();
 
     public override void CheckNeigbourConnections(Tile tile)
@@ -25,10 +26,17 @@ public class TypeGrass : Type {
 
         if(r == Tile.W || r == Tile.E)
         {
-            if(tile.neighbours[r].type.typeId == "So" && tile.neighbours[r].neighbours[Tile.N].type.myState == State.Gas)
+            if((tile.neighbours[r].type.typeId == "So" || tile.neighbours[r].type.typeId == "As") && tile.neighbours[r].neighbours[Tile.N].type.myState == State.Gas)
             {
                 tile.neighbours[r].SetType(this);
             }
+        }
+
+        int r1 = Random.Range(0, chanceOfTree);
+        if(r1 == 1)
+        {
+            tile.SetType(listOfTypes.types[ListOfTypes.TREE]);
+            return;
         }
 
         int ra = Random.Range(0, anim.Count);

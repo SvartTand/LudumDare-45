@@ -208,15 +208,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a960604bc56ac348b1687f782c7c5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeName: Unknown
-  typeId: 
-  sprite: {fileID: 0}
-  icon: {fileID: 0}
-  c: {r: 0, g: 0, b: 0, a: 0}
-  listOfTypes: {fileID: 0}
-  updInterval: 0
-  rigidity: 0
-  weight: 0
+  typeName: Clay
+  typeId: Cl
+  sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
+  icon: {fileID: 21300000, guid: 10b61113463463940aac84e26289eee4, type: 3}
+  c: {r: 0.7075472, g: 0.29689237, b: 0, a: 1}
+  listOfTypes: {fileID: 1987281708}
+  updInterval: 0.3
+  rigidity: 2
+  weight: 1
   burnable: 0
   myState: 0
 --- !u!1 &211284923
@@ -271,6 +271,10 @@ MonoBehaviour:
   burnable: 0
   myState: 0
   pressureToCreateLava: 50
+  colors:
+  - {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  - {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+  - {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
 --- !u!1 &239756806
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +439,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1987281709}
   m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435982565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435982567}
+  - component: {fileID: 435982566}
+  m_Layer: 0
+  m_Name: Bricks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &435982566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435982565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f079fd035da82a244bc4f007eab9fe11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeName: Bricks
+  typeId: Br
+  sprite: {fileID: 21300000, guid: 165f417ee0326a241af71fdff6836f2d, type: 3}
+  icon: {fileID: 0}
+  c: {r: 1, g: 1, b: 1, a: 1}
+  listOfTypes: {fileID: 1987281708}
+  updInterval: 0.2
+  rigidity: 5
+  weight: 1
+  burnable: 0
+  myState: 0
+--- !u!4 &435982567
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435982565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1987281709}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
@@ -838,6 +893,57 @@ MonoBehaviour:
   weight: 0
   burnable: 0
   myState: 0
+--- !u!1 &770300194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 770300196}
+  - component: {fileID: 770300195}
+  m_Layer: 0
+  m_Name: Glass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &770300195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770300194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0beb5de505c1dde46ba3b7351903b357, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeName: Glass
+  typeId: Gl
+  sprite: {fileID: 21300000, guid: f5d658769c60d8c438371b9af2704898, type: 3}
+  icon: {fileID: 0}
+  c: {r: 1, g: 1, b: 1, a: 1}
+  listOfTypes: {fileID: 1987281708}
+  updInterval: 0.2
+  rigidity: 4
+  weight: 1
+  burnable: 0
+  myState: 0
+--- !u!4 &770300196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 770300194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1987281709}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781445509
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,17 +984,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58135157bb034b9428bdb81e91ff97a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeName: Unknown
-  typeId: 
-  sprite: {fileID: 0}
-  icon: {fileID: 0}
-  c: {r: 0, g: 0, b: 0, a: 0}
-  listOfTypes: {fileID: 0}
-  updInterval: 0
-  rigidity: 0
-  weight: 0
-  burnable: 0
+  typeName: Tree
+  typeId: T
+  sprite: {fileID: 21300000, guid: d5e29e2c54cfbdc48a31bb5815b43ab5, type: 3}
+  icon: {fileID: 21300000, guid: ec9061924059b604cb0708a1c865dd81, type: 3}
+  c: {r: 0.6226415, g: 0.42183295, b: 0.09803922, a: 1}
+  listOfTypes: {fileID: 1987281708}
+  updInterval: 0.2
+  rigidity: 10
+  weight: 1
+  burnable: 1
   myState: 0
+  chanceOfGrowing: 2
 --- !u!1 &815905374
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1288,8 @@ MonoBehaviour:
   burnable: 0
   myState: 2
   chanceToCreateCloud: 1
-  chanceOfDecay: 30
+  chanceOfDecay: 1000
+  cloudGenHeight: 30
 --- !u!1 &929238531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1373,62 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &1157647412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157647413}
+  - component: {fileID: 1157647414}
+  m_Layer: 0
+  m_Name: Leaves
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1157647413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157647412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1987281709}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157647414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1157647412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c885dfb61096ac1438894b2df65887b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typeName: Leaves
+  typeId: Le
+  sprite: {fileID: 21300000, guid: 8d4f20fe89f99844381cfb85ad16afab, type: 3}
+  icon: {fileID: 21300000, guid: ec9061924059b604cb0708a1c865dd81, type: 3}
+  c: {r: 0, g: 0.5660378, b: 0, a: 1}
+  listOfTypes: {fileID: 1987281708}
+  updInterval: 0.2
+  rigidity: 1
+  weight: 1
+  burnable: 1
+  myState: 2
+  anim:
+  - {fileID: 21300000, guid: 8d4f20fe89f99844381cfb85ad16afab, type: 3}
+  - {fileID: 21300000, guid: 5617c7b8bb684b547adbb9152aa6deff, type: 3}
+  - {fileID: 21300000, guid: c6c239c7c50fe234bb8ac57f1a9076b1, type: 3}
+  - {fileID: 21300000, guid: 7b06f26448cbc07409f3bf6a91afe11d, type: 3}
 --- !u!1 &1165803131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1341,7 +1505,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1841746494}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.83618677
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1414,7 +1578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00081365294}
+  m_AnchoredPosition: {x: 0, y: 0.000048704267}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1174037788
@@ -1804,13 +1968,18 @@ MonoBehaviour:
   typeId: So
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
   icon: {fileID: 21300000, guid: 60e90ad55a116f044978ec0828152305, type: 3}
-  c: {r: 0.33962262, g: 0.15255949, b: 0, a: 1}
+  c: {r: 0.5803922, g: 0.14901961, b: 0, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
   rigidity: 2
   weight: 1
   burnable: 0
   myState: 0
+  pressureToCreateClay: 10
+  colors:
+  - {r: 0.5803922, g: 0.14901961, b: 0, a: 1}
+  - {r: 0.49056602, g: 0.1487439, b: 0, a: 1}
+  - {r: 0.4117647, g: 0.14901961, b: 0, a: 1}
 --- !u!1 &1490439729
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2305,7 @@ MonoBehaviour:
   burnable: 1
   myState: 0
   chanceOfSpreading: 10
+  chanceOfTree: 2000
   anim:
   - {fileID: 21300000, guid: 776e53ab5a240bd48839b769154d37ca, type: 3}
   - {fileID: 21300000, guid: 82cc4505fe793ec4aba4db9c09a3ef6a, type: 3}
@@ -3053,6 +3223,9 @@ MonoBehaviour:
   - {fileID: 161098985}
   - {fileID: 569289068}
   - {fileID: 1662472016}
+  - {fileID: 1157647414}
+  - {fileID: 770300195}
+  - {fileID: 435982566}
 --- !u!4 &1987281709
 Transform:
   m_ObjectHideFlags: 0
@@ -3083,6 +3256,9 @@ Transform:
   - {fileID: 161098984}
   - {fileID: 569289067}
   - {fileID: 1662472015}
+  - {fileID: 1157647413}
+  - {fileID: 770300196}
+  - {fileID: 435982567}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3234,6 +3410,10 @@ MonoBehaviour:
   myState: 1
   chanceToCreateSand: 1000
   chanceToCreateSteamWithLava: 2
+  colors:
+  - {r: 0, g: 0.20392159, b: 0.8117648, a: 1}
+  - {r: 0, g: 0.24313726, b: 0.8117647, a: 1}
+  - {r: 0, g: 0.28627452, b: 0.8117647, a: 1}
 --- !u!4 &2090299383
 Transform:
   m_ObjectHideFlags: 0

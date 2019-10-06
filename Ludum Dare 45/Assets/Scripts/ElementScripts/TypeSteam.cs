@@ -7,35 +7,43 @@ public class TypeSteam : Type {
     public int chanceToCreateCloud;
     public int chanceOfDecay;
 
+    public int cloudGenHeight;
+
     public override void CheckNeigbourConnections(Tile tile)
     {
-        Debug.Log("Uppdating Steam");
+        //Debug.Log("Uppdating Steam");
         int r = Random.Range(0, chanceOfDecay);
-        Debug.Log(r);
+        //Debug.Log(r);
         if (r == 1)
         {
             tile.SetType(listOfTypes.types[0]);
         }
 
-        int x = 0;
-        for (int i = 0; i < tile.neighbours.Length; i++)
+        if(tile.GetPos().y >= cloudGenHeight)
         {
-            if (tile.neighbours[i].type.typeId == typeId)
+            int x = 0;
+            for (int i = 0; i < tile.neighbours.Length; i++)
             {
-                x++;
-                
-            }else if(tile.neighbours[i].type.typeId == "C")
+                if (tile.neighbours[i].type.typeId == typeId)
+                {
+                    x++;
+
+                }
+                else if (tile.neighbours[i].type.typeId == "C")
+                {
+                    tile.SetType(listOfTypes.types[ListOfTypes.CLOUD]);
+                    break;
+                }
+            }
+
+            if (x == 4)
             {
+
                 tile.SetType(listOfTypes.types[ListOfTypes.CLOUD]);
-                break;
             }
         }
 
-        if(x == 4)
-        {
-  
-            tile.SetType(listOfTypes.types[ListOfTypes.CLOUD]);
-        }
+        
 
         
     }

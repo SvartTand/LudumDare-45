@@ -51,9 +51,13 @@ public class Type : MonoBehaviour {
                     }
                 }
 
-                int r = Random.Range(0, possibleMoves.Count);
-                possibleMoves[r].SetType(tile.type);
-                tile.SetType(listOfTypes.types[0]);
+                if(possibleMoves.Count >= 1)
+                {
+                    int r = Random.Range(0, possibleMoves.Count);
+                    possibleMoves[r].SetType(tile.type);
+                    tile.SetType(listOfTypes.types[0]);
+                }
+                
 
             }
             else if (neighbours[Tile.S].type.myState == State.Gas)
@@ -95,9 +99,10 @@ public class Type : MonoBehaviour {
             if (neighbours[Tile.S].type.myState == State.Gas)
             {
                 //Fall down
+                Type prevType = neighbours[Tile.S].type;
                 neighbours[Tile.S].SetType(tile.type);
                 neighbours[Tile.S].direction = 0;
-                tile.SetType(listOfTypes.types[0]);
+                tile.SetType(prevType);
                 tile.direction = 0;
 
             }
@@ -116,6 +121,7 @@ public class Type : MonoBehaviour {
 
                 if (neighbours[tile.direction].type.myState == State.Gas)
                 {
+                    Type prevType = neighbours[tile.direction].type;
                     neighbours[tile.direction].SetType(tile.type);
                     neighbours[tile.direction].direction = tile.direction;
                     tile.SetType(listOfTypes.types[0]);
@@ -123,7 +129,7 @@ public class Type : MonoBehaviour {
                 }
                 else if (neighbours[GetReverse(tile.direction)].type.myState == State.Gas)
                 {
-
+                    Type prevType = neighbours[tile.direction].type;
                     neighbours[GetReverse(tile.direction)].SetType(tile.type);
                     neighbours[GetReverse(tile.direction)].direction = GetReverse(tile.direction);
                     tile.SetType(listOfTypes.types[0]);
@@ -143,8 +149,9 @@ public class Type : MonoBehaviour {
             if (neighbours[Tile.S].type.myState == State.Gas || neighbours[Tile.S].type.myState == State.Animal)
             {
                 //Fall down
+                Type prevType = neighbours[Tile.S].type;
                 neighbours[Tile.S].SetType(tile.type);
-                tile.SetType(listOfTypes.types[0]);
+                tile.SetType(prevType);
 
             }
             //if water is under

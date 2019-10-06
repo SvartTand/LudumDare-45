@@ -12,5 +12,11 @@ public class TypeAnimal : Type {
         tile.SetSprite(anima[ra], c);
     }
 
+    public override void FirstUppdate(Tile t)
+    {
+        int ra = Random.Range(0, anima.Count);
+        t.SetSprite(anima[ra], c);
+    }
+
 
 }

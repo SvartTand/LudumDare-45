@@ -8,16 +8,7 @@ public class TypeWater : Type {
 
     public int chanceToCreateSand;
     public int chanceToCreateSteamWithLava;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public List<Color> colors = new List<Color>();
 
     public override void UpdateTile(Tile tile, Tile[] neighbours)
     {
@@ -26,9 +17,10 @@ public class TypeWater : Type {
         if(neighbours[Tile.S].type.myState == State.Gas)
         {
             //Fall down
+            Type prevType = neighbours[Tile.S].type;
             neighbours[Tile.S].SetType(tile.type);
             neighbours[Tile.S].direction = 0;
-            tile.SetType(listOfTypes.types[0]);
+            tile.SetType(prevType);
             tile.direction = 0;
             
         }
@@ -81,20 +73,16 @@ public class TypeWater : Type {
                 }
             }
 
-            if (tile.neighbours[i].type.typeId == "L")
-            {
-                int r = Random.Range(0, chanceToCreateSteamWithLava);
-                if (r == 1)
-                {
-                    tile.SetType(listOfTypes.types[ListOfTypes.STEAM]);
-                }
-            }
+            
         }
+        int ra = Random.Range(0, colors.Count);
+        tile.SetSprite(sprite, colors[ra]);
     }
 
     public override void FirstUppdate(Tile t)
     {
-        t.SetSprite(sprite, c);
+        int ra = Random.Range(0, colors.Count);
+        t.SetSprite(sprite, colors[ra]);
     }
 
 }

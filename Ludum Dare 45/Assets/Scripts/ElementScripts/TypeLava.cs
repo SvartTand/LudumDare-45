@@ -14,6 +14,15 @@ public class TypeLava : Type {
             {
                 tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.CLAY]);
             }
+            if (tile.neighbours[i].type.myState == State.Animal)
+            {
+                tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.FIRE]);
+            }
+            if (tile.neighbours[i].type.myState == State.Liquid && tile.neighbours[i].type != this)
+            {
+               tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.STEAM]);
+            }
+
         }
 
         int ra = Random.Range(0, colors.Count);
