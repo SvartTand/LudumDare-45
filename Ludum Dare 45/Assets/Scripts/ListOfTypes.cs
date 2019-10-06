@@ -25,12 +25,17 @@ public class ListOfTypes : MonoBehaviour {
     private string baseAnimal;
     private int animal = 0;
 
+    public AudioSource eurika;
+
     public List<Type> types = new List<Type>();
+
+    public GameObject completedPanel;
+    private int count;
 
 
     public static int AIR = 0, WATER = 1, BEDROCK = 2, EARTH = 3, STONE = 4, LAVA = 5, STEAM = 6, SAND = 7, CLOUD = 8, LIGHTNING = 9, 
         ALGEE = 10, SOIL = 11, FIRE = 12, GRASS = 13, CACTUS = 14, TREE = 15, ANIMAL = 16, CLAY = 17, ASH = 18, MAN = 19, LEAVES = 20,
-        GLASS = 21, BRICKS = 22, METAL = 23, LAVAROCK = 24, BLOOD = 25;
+        GLASS = 21, BRICKS = 22, METAL = 23, LAVAROCK = 24, BLOOD = 25,BIRD = 26, LIME_STONE = 27, EGG = 28;
 
 
     public void Start()
@@ -40,6 +45,11 @@ public class ListOfTypes : MonoBehaviour {
         humanBornBaseText = humanBornText.text;
         baseAnimal = AnimalText.text;
         baseMatterText = MatterText.text;
+    }
+
+    public void PlayEurika()
+    {
+        eurika.Play();
     }
 
     public void HumanKilled()
@@ -71,6 +81,20 @@ public class ListOfTypes : MonoBehaviour {
     {
         animal++;
         AnimalText.text = baseAnimal + " " + animal;
+    }
+
+    public void UpdateTypeList()
+    {
+        count++;
+        if (count >= types.Count - 4)
+        {
+            completedPanel.active = true;
+        }
+    }
+
+    public void PanelClick()
+    {
+        completedPanel.active = false;
     }
 
 

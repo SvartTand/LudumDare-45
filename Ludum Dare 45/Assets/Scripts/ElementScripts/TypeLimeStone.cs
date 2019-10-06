@@ -2,25 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TypeClay : Type {
+public class TypeLimeStone : Type {
 
     public List<Color> colors;
 
     public override void CheckNeigbourConnections(Tile tile)
     {
-        //if human beside clay -> bricks
-        for (int i = 0; i < tile.neighbours.Length; i++)
+        for(int i = 0; i < tile.neighbours.Length; i++)
         {
-            if(tile.neighbours[i].type.typeId == "M")
+            if(tile.neighbours[i].type.typeId == "Ani")
             {
-                tile.SetType(listOfTypes.types[ListOfTypes.BRICKS]);
+                tile.SetType(listOfTypes.types[ListOfTypes.EGG]);
             }
-
-            if (tile.neighbours[i].type.typeId == "W")
-            {
-                tile.SetType(listOfTypes.types[ListOfTypes.LIME_STONE]);
-            }
-
         }
 
         int press = CalculatePressure(tile);
@@ -47,7 +40,5 @@ public class TypeClay : Type {
             tile.SetSprite(sprite, c);
             return;
         }
-
     }
-
 }

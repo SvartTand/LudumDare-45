@@ -19,7 +19,7 @@ public class TypeLeaves : Type {
             }
         }
 
-        tile.SetType(listOfTypes.types[ListOfTypes.STEAM]);
+        tile.SetType(listOfTypes.types[0]);
     }
 
     public override void UpdateTile(Tile tile, Tile[] neighbours)

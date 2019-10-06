@@ -19,6 +19,10 @@ public class TypeLava : Type {
             {
                 tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.CLAY]);
             }
+            if (tile.neighbours[i].type.typeId == "Me")
+            {
+                tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.LAVA]);
+            }
             if (tile.neighbours[i].type.myState == State.Animal)
             {
                 tile.neighbours[i].SetType(listOfTypes.types[ListOfTypes.FIRE]);

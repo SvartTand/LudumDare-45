@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SunScript : MonoBehaviour {
 
@@ -24,6 +25,9 @@ public class SunScript : MonoBehaviour {
 
     private bool first = true;
     private float timer = 0;
+
+    public Text text;
+    private int day = 0;
 
     //v = 2 × π × r / t
 
@@ -64,6 +68,8 @@ public class SunScript : MonoBehaviour {
 
             if (camera.backgroundColor == nightColor)
             {
+                day++;
+                text.text = "Day: " + day;
                 curentColor = nightColor;
                 nextColor = dayColor;
             }

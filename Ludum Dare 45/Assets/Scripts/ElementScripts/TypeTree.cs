@@ -25,4 +25,15 @@ public class TypeTree : Type {
 
         }
     }
+
+    public override void CheckNeigbourConnections(Tile tile)
+    {
+        for (int i = 0; i < tile.neighbours.Length; i++)
+        {
+            if (tile.neighbours[i].type.typeId == "L")
+            {
+                tile.SetType(listOfTypes.types[ListOfTypes.FIRE]);
+            }
+        }
+    }
 }

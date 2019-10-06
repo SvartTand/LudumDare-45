@@ -29,6 +29,8 @@ public class Type : MonoBehaviour {
     {
         if (first)
         {
+            listOfTypes.UpdateTypeList();
+            listOfTypes.PlayEurika();
             typeButton.interactable = true;
             first = false;
         }
@@ -53,12 +55,13 @@ public class Type : MonoBehaviour {
             if(neighbours[Tile.N].type.myState != State.Gas && neighbours[Tile.N].type.myState != State.Animal)
             {
                 //Kill animal
-                tile.SetType(listOfTypes.types[ListOfTypes.BLOOD]);
-                listOfTypes.AnimalKilled();
-                if(tile.type.typeId == "M")
+                if (tile.type.typeId == "M")
                 {
                     listOfTypes.HumanKilled();
                 }
+                tile.SetType(listOfTypes.types[ListOfTypes.BLOOD]);
+                listOfTypes.AnimalKilled();
+                
             }
 
             if (neighbours[Tile.S].type.myState == State.Solid)

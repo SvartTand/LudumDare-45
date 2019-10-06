@@ -17,7 +17,7 @@ public class ElementScrollList : MonoBehaviour {
         
         for (int i = 0; i < list.types.Count; i++)
         {
-            if(i != 2)
+            if(i != 2 && i != 0)
             {
                 GameObject tempButton = GameObject.Instantiate(buttonPrefab, transform);
                 tempButton.GetComponent<ElementButtonScript>().Setup(list.types[i], inputHandler);
