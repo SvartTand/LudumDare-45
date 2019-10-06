@@ -1242,7 +1242,7 @@ MonoBehaviour:
   animalAudio: {fileID: 8300000, guid: 4b16fbc87397eb641b76ec19392940af, type: 3}
   plasmaAudio: {fileID: 8300000, guid: 4b16fbc87397eb641b76ec19392940af, type: 3}
   popUpBox: {fileID: 213317704}
-  disabledColor: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  disabledColor: {r: 1, g: 0.9783717, b: 0, a: 1}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1841746494}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.92762375
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2436,7 +2436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00004932047}
+  m_AnchoredPosition: {x: 0, y: 0.0000772006}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1174037788
@@ -2902,7 +2902,7 @@ MonoBehaviour:
   camera: {fileID: 519420031}
   dayColor: {r: 0.10849059, g: 0.47226766, b: 1, a: 1}
   nightColor: {r: 0.047169805, g: 0.047169805, b: 0.047169805, a: 1}
-  dur: 30.73984
+  dur: 32
 --- !u!1 &1370135623
 GameObject:
   m_ObjectHideFlags: 0
