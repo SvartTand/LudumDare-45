@@ -19,6 +19,6 @@ public class MainMenuHandler : MonoBehaviour {
 
     public void PlayPressed()
     {
-        SceneManager.LoadScene("GameScen");
+        SceneManager.LoadScene("GameScene");
     }
 }

@@ -50,10 +50,10 @@ public class Type : MonoBehaviour {
     {
         if (myState == State.Animal)
         {
-            if(neighbours[Tile.N].type.myState != State.Gas)
+            if(neighbours[Tile.N].type.myState != State.Gas && neighbours[Tile.N].type.myState != State.Animal)
             {
                 //Kill animal
-                tile.SetType(listOfTypes.types[0]);
+                tile.SetType(listOfTypes.types[ListOfTypes.BLOOD]);
                 listOfTypes.AnimalKilled();
                 if(tile.type.typeId == "M")
                 {

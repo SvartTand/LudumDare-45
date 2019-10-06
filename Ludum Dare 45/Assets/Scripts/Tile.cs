@@ -98,6 +98,10 @@ public class Tile : MonoBehaviour {
         if (type.typeId == "A")
         {
             SetType(newType);
+            if (newType.typeId == "M")
+            {
+                newType.listOfTypes.HumanBorn();
+            }
             newType.listOfTypes.AddedMatter(newType.weight);
         }
         if (depth > 1)

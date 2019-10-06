@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InputHandler : MonoBehaviour {
 
@@ -72,6 +73,11 @@ public class InputHandler : MonoBehaviour {
                 //Debug.Log(hit.transform.name);
             }
         }
+    }
+
+    public void MenuPressed()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void ElementSelected(Type t, Button b)

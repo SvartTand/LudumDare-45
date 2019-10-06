@@ -23,6 +23,20 @@ public class TypeMan : Type {
             
 
         }
+
+        if (tile.neighbours[Tile.S].type.typeId == "Me")
+        {
+
+            if (listOfTypes.types[ListOfTypes.GLASS].IsUnlocked())
+            {
+                BuildSkyScraper(tile);
+                listOfTypes.HouseBuilt();
+
+
+            }
+
+
+        }
     }
 
     public override void FirstUppdate(Tile t)
@@ -43,6 +57,39 @@ public class TypeMan : Type {
         }
         tile.neighbours[Tile.S].neighbours[Tile.E].SetType(listOfTypes.types[ListOfTypes.BRICKS]);
         tile.neighbours[Tile.S].neighbours[Tile.W].SetType(listOfTypes.types[ListOfTypes.BRICKS]);
+
+    }
+
+    private void BuildSkyScraper(Tile tile)
+    {
+        int height = Random.Range(2, 10);
+        tile.neighbours[Tile.S].neighbours[Tile.E].SetType(listOfTypes.types[ListOfTypes.METAL]);
+        tile.neighbours[Tile.S].neighbours[Tile.W].SetType(listOfTypes.types[ListOfTypes.METAL]);
+
+        tile.neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.METAL]);
+
+        while (height > 0)
+        {
+            if(height%2 == 1)
+            {
+                tile.neighbours[Tile.W].SetType(listOfTypes.types[ListOfTypes.METAL]);
+                tile.neighbours[Tile.E].SetType(listOfTypes.types[ListOfTypes.METAL]);
+                tile.SetType(listOfTypes.types[ListOfTypes.GLASS]);
+            }
+            else
+            {
+                tile.neighbours[Tile.W].SetType(listOfTypes.types[ListOfTypes.METAL]);
+                tile.neighbours[Tile.E].SetType(listOfTypes.types[ListOfTypes.METAL]);
+                tile.SetType(listOfTypes.types[ListOfTypes.METAL]);
+            }
+            tile = tile.neighbours[Tile.N];
+
+
+
+            height--;
+        }
+
+
 
     }
 }
