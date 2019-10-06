@@ -85,4 +85,9 @@ public class TypeWater : Type {
         t.SetSprite(sprite, colors[ra]);
     }
 
+    public override void SetButtonInteractable()
+    {
+
+    }
+
 }

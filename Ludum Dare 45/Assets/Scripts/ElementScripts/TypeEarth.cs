@@ -92,4 +92,9 @@ public class TypeEarth : Type {
 
 
     }
+
+    public override void SetButtonInteractable()
+    {
+
+    }
 }

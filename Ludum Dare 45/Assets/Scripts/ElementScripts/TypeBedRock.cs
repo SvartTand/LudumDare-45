@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class TypeBedRock : Type {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public override void SetButtonInteractable()
+    {
+
+    }
+
+    public override void FirstUppdate(Tile t)
+    {
+        
+    }
 }

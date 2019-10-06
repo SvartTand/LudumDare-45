@@ -46,6 +46,7 @@ public class TypeGrass : Type {
 
     public override void FirstUppdate(Tile t)
     {
+        SetButtonInteractable();
         int ra = Random.Range(0, anim.Count);
         t.SetSprite(anim[ra], c);
     }

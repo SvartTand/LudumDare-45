@@ -5,7 +5,10 @@ using UnityEngine;
 public class TypeAir : Type {
 
 
-
+    public override void SetButtonInteractable()
+    {
+        
+    }
 
     public override void UpdateTile(Tile tile, Tile[] neighbours)
     {

@@ -55,7 +55,11 @@ public class Tile : MonoBehaviour {
 
     public void IsClickedOn(Type newType, int brushSize)
     {
-        SetType(newType);
+        if(type.typeId == "A")
+        {
+            SetType(newType);
+        }
+        
         if(brushSize > 1)
         {
             for(int i = 0; i < neighbours.Length; i++)
@@ -86,7 +90,10 @@ public class Tile : MonoBehaviour {
 
     public void SetNeighbours(Type newType, int depth)
     {
-        SetType(newType);
+        if (type.typeId == "A")
+        {
+            SetType(newType);
+        }
         if (depth > 1)
         {
             for (int i = 0; i < neighbours.Length; i++)

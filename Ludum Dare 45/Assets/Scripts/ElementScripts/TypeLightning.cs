@@ -6,6 +6,8 @@ public class TypeLightning : Type {
 
     public int chanseOfGoingSideway;
 
+    public AudioSource audio;
+
     public override void UpdateTile(Tile tile, Tile[] neighbours)
     {
         
@@ -29,8 +31,10 @@ public class TypeLightning : Type {
                     {
                         neighbours[r].SetType(listOfTypes.types[ListOfTypes.FIRE]);
                     }
+                    audio.Play();
                     GroundHit(tile);
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraHandler>().Shake(0.7f, 0.5f);
+                    
                 }
                 
             }
@@ -61,6 +65,7 @@ public class TypeLightning : Type {
                     {
                         neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.FIRE]);
                     }
+                    audio.Play();
                     GroundHit(tile);
                     GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraHandler>().Shake(0.01f, 0.2f);
                 }
@@ -71,6 +76,7 @@ public class TypeLightning : Type {
 
     public override void FirstUppdate(Tile t)
     {
+        SetButtonInteractable();
         t.SetSprite(sprite, c);
     }
 

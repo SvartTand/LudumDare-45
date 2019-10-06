@@ -33,6 +33,7 @@ public class TypeLava : Type {
 
     public override void FirstUppdate(Tile t)
     {
+        SetButtonInteractable();
         int ra = Random.Range(0, colors.Count);
         t.SetSprite(sprite, colors[ra]);
     }

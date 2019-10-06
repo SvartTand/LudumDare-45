@@ -14,6 +14,7 @@ public class TypeAnimal : Type {
 
     public override void FirstUppdate(Tile t)
     {
+        SetButtonInteractable();
         int ra = Random.Range(0, anima.Count);
         t.SetSprite(anima[ra], c);
     }

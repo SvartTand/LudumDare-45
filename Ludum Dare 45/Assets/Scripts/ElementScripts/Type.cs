@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Type : MonoBehaviour {
 
@@ -20,6 +21,29 @@ public class Type : MonoBehaviour {
 
     public enum State { Solid, Liquid, Gas, Plasma, Animal};
     public State myState;
+
+    private bool first = true;
+    private Button typeButton;
+
+    public virtual void SetButtonInteractable()
+    {
+        if (first)
+        {
+            typeButton.interactable = true;
+            first = false;
+        }
+        
+    }
+
+    public virtual bool IsUnlocked()
+    {
+        return !first;
+    }
+
+    public void SetButton(Button b)
+    {
+        typeButton = b;
+    }
 
 
     public virtual void UpdateTile(Tile tile, Tile[] neighbours)
@@ -195,6 +219,7 @@ public class Type : MonoBehaviour {
 
     public virtual void FirstUppdate(Tile t)
     {
+        SetButtonInteractable();
         t.SetSprite(sprite, c);
     }
 
