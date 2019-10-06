@@ -60,6 +60,7 @@ public class TypeLightning : Type {
                     else if (neighbours[Tile.S].type == listOfTypes.types[ListOfTypes.ANIMAL])
                     {
                         neighbours[Tile.S].SetType(listOfTypes.types[ListOfTypes.MAN]);
+                        listOfTypes.HumanBorn();
                     }
                     else if (neighbours[Tile.S].type.burnable)
                     {
@@ -76,6 +77,7 @@ public class TypeLightning : Type {
 
     public override void FirstUppdate(Tile t)
     {
+
         SetButtonInteractable();
         t.SetSprite(sprite, c);
     }

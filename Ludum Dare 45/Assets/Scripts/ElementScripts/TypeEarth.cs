@@ -53,6 +53,7 @@ public class TypeEarth : Type {
 
     public override void FirstUppdate(Tile t)
     {
+
         c = depthColor[0];
         t.SetSprite(sprite, c);
     }

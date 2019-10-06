@@ -54,6 +54,11 @@ public class Type : MonoBehaviour {
             {
                 //Kill animal
                 tile.SetType(listOfTypes.types[0]);
+                listOfTypes.AnimalKilled();
+                if(tile.type.typeId == "M")
+                {
+                    listOfTypes.HumanKilled();
+                }
             }
 
             if (neighbours[Tile.S].type.myState == State.Solid)
@@ -219,6 +224,7 @@ public class Type : MonoBehaviour {
 
     public virtual void FirstUppdate(Tile t)
     {
+        
         SetButtonInteractable();
         t.SetSprite(sprite, c);
     }

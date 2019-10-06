@@ -57,6 +57,11 @@ public class Tile : MonoBehaviour {
     {
         if(type.typeId == "A")
         {
+            newType.listOfTypes.AddedMatter(newType.weight);
+            if(newType.typeId == "M")
+            {
+                newType.listOfTypes.HumanBorn();
+            }
             SetType(newType);
         }
         
@@ -93,6 +98,7 @@ public class Tile : MonoBehaviour {
         if (type.typeId == "A")
         {
             SetType(newType);
+            newType.listOfTypes.AddedMatter(newType.weight);
         }
         if (depth > 1)
         {

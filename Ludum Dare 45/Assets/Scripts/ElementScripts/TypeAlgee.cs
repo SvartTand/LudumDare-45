@@ -42,6 +42,7 @@ public class TypeAlgee : Type {
 
     public override void FirstUppdate(Tile t)
     {
+        listOfTypes.AddedMatter(weight);
         SetButtonInteractable();
         int ra = Random.Range(0, colors.Count);
         t.SetSprite(sprite, colors[ra]);
