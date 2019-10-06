@@ -156,7 +156,7 @@ MonoBehaviour:
   typeName: Animal
   typeId: Ani
   sprite: {fileID: 21300000, guid: ed4aa74155a23264087b91f143e2ac45, type: 3}
-  icon: {fileID: 21300000, guid: c2bdd629bd8d908479f17b83d89496c9, type: 3}
+  icon: {fileID: 21300000, guid: cb7a82b8d0b2f884eb4fc6aa18fab1c9, type: 3}
   c: {r: 1, g: 1, b: 1, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.4
@@ -211,14 +211,18 @@ MonoBehaviour:
   typeName: Clay
   typeId: Cl
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 10b61113463463940aac84e26289eee4, type: 3}
-  c: {r: 0.7075472, g: 0.29689237, b: 0, a: 1}
+  icon: {fileID: 21300000, guid: 4563583400b6260449f3d45544dc9381, type: 3}
+  c: {r: 0.8, g: 0.3372549, b: 0, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.3
   rigidity: 2
   weight: 1
   burnable: 0
   myState: 0
+  colors:
+  - {r: 0.8018868, g: 0.3385744, b: 0, a: 1}
+  - {r: 0.754717, g: 0.318165, b: 0, a: 1}
+  - {r: 0.6509434, g: 0.2744173, b: 0, a: 1}
 --- !u!1 &211284923
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +474,7 @@ MonoBehaviour:
   typeName: Bricks
   typeId: Br
   sprite: {fileID: 21300000, guid: 165f417ee0326a241af71fdff6836f2d, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 91cd368d78dc45a4e91af13ad60d4a70, type: 3}
   c: {r: 1, g: 1, b: 1, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -643,7 +647,7 @@ MonoBehaviour:
   typeName: Ash
   typeId: As
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 85217b723d15bc3498c16c5736da2f90, type: 3}
+  icon: {fileID: 21300000, guid: 25fadb749e5e9e84690a05a4bd3eb864, type: 3}
   c: {r: 0.14150941, g: 0.13950692, b: 0.13950692, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -923,7 +927,7 @@ MonoBehaviour:
   typeName: Glass
   typeId: Gl
   sprite: {fileID: 21300000, guid: f5d658769c60d8c438371b9af2704898, type: 3}
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: f57db957aa91de5468fd7cae8624414c, type: 3}
   c: {r: 1, g: 1, b: 1, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -987,7 +991,7 @@ MonoBehaviour:
   typeName: Tree
   typeId: T
   sprite: {fileID: 21300000, guid: d5e29e2c54cfbdc48a31bb5815b43ab5, type: 3}
-  icon: {fileID: 21300000, guid: ec9061924059b604cb0708a1c865dd81, type: 3}
+  icon: {fileID: 21300000, guid: 56a67d4f07328a74dad1bde48c4b8810, type: 3}
   c: {r: 0.6226415, g: 0.42183295, b: 0.09803922, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -1279,7 +1283,7 @@ MonoBehaviour:
   typeName: Steam
   typeId: St
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 60e90ad55a116f044978ec0828152305, type: 3}
+  icon: {fileID: 21300000, guid: ebfcca965d205d64bae7d4830d12829e, type: 3}
   c: {r: 0.61383057, g: 0.6223026, b: 0.6226415, a: 0.5647059}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.3
@@ -1416,7 +1420,7 @@ MonoBehaviour:
   typeName: Leaves
   typeId: Le
   sprite: {fileID: 21300000, guid: 8d4f20fe89f99844381cfb85ad16afab, type: 3}
-  icon: {fileID: 21300000, guid: ec9061924059b604cb0708a1c865dd81, type: 3}
+  icon: {fileID: 21300000, guid: 9cbe00f4015940941a5d5796dedaa983, type: 3}
   c: {r: 0, g: 0.5660378, b: 0, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -1578,7 +1582,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000048704267}
+  m_AnchoredPosition: {x: 0, y: 0.00007656871}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1174037788
@@ -1704,7 +1708,7 @@ GameObject:
   - component: {fileID: 1318197001}
   - component: {fileID: 1318197002}
   m_Layer: 0
-  m_Name: Algee
+  m_Name: Algae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1734,10 +1738,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e29b88c2f5a254d8f81e5cd39246a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeName: Algee
+  typeName: Algae
   typeId: Al
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 60e90ad55a116f044978ec0828152305, type: 3}
+  icon: {fileID: 21300000, guid: cec543b3f5c04354298b4489eff42f3f, type: 3}
   c: {r: 0, g: 0.35863292, b: 0.5568628, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -1746,6 +1750,10 @@ MonoBehaviour:
   burnable: 0
   myState: 1
   lifeSpan: 30
+  colors:
+  - {r: 0, g: 0.35686275, b: 0.5568628, a: 1}
+  - {r: 0, g: 0.39215687, b: 0.5568628, a: 1}
+  - {r: 0, g: 0.45490196, b: 0.5568628, a: 1}
 --- !u!1 &1370135623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,7 +1975,7 @@ MonoBehaviour:
   typeName: Soil
   typeId: So
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 60e90ad55a116f044978ec0828152305, type: 3}
+  icon: {fileID: 21300000, guid: 89019a72ee3a8ce48b51ba47ca75c2f2, type: 3}
   c: {r: 0.5803922, g: 0.14901961, b: 0, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -2023,7 +2031,7 @@ MonoBehaviour:
   typeName: Earth
   typeId: E
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
-  icon: {fileID: 21300000, guid: 60e90ad55a116f044978ec0828152305, type: 3}
+  icon: {fileID: 21300000, guid: 8d5362a9c53f85248807f96eabad3688, type: 3}
   c: {r: 0.4716981, g: 0.294469, b: 0.17577429, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
@@ -2367,7 +2375,7 @@ MonoBehaviour:
   typeName: Man
   typeId: M
   sprite: {fileID: 21300000, guid: 2e58972dcbb853a49a158ec690cb5608, type: 3}
-  icon: {fileID: 21300000, guid: ec9061924059b604cb0708a1c865dd81, type: 3}
+  icon: {fileID: 21300000, guid: 9ef2daf72547c844b8c3c901e24d20ca, type: 3}
   c: {r: 1, g: 1, b: 1, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.3
@@ -3306,13 +3314,17 @@ MonoBehaviour:
   typeId: Sa
   sprite: {fileID: 21300000, guid: 14f37f324a80a98499b10495b6598aed, type: 3}
   icon: {fileID: 21300000, guid: 85217b723d15bc3498c16c5736da2f90, type: 3}
-  c: {r: 0.8396226, g: 0.77740484, b: 0, a: 1}
+  c: {r: 0.9622642, g: 0.90448046, b: 0, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2
   rigidity: 1
   weight: 2
   burnable: 0
   myState: 0
+  colors:
+  - {r: 0.9647059, g: 0.90588236, b: 0, a: 1}
+  - {r: 0.9433962, g: 0.88587207, b: 0, a: 1}
+  - {r: 0.8773585, g: 0.823861, b: 0, a: 1}
 --- !u!1 &2061672644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,7 +3368,7 @@ MonoBehaviour:
   typeName: Cactus
   typeId: Ca
   sprite: {fileID: 21300000, guid: ec670d8a959e47e4f929a36a8d088fc9, type: 3}
-  icon: {fileID: 21300000, guid: 85217b723d15bc3498c16c5736da2f90, type: 3}
+  icon: {fileID: 21300000, guid: 6f94139959742fd4bbad1d03006850cd, type: 3}
   c: {r: 1, g: 1, b: 1, a: 1}
   listOfTypes: {fileID: 1987281708}
   updInterval: 0.2

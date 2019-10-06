@@ -5,6 +5,7 @@ using UnityEngine;
 public class TypeAlgee : Type {
 
     public int lifeSpan;
+    public List<Color> colors = new List<Color>();
 
     public override void CheckNeigbourConnections(Tile tile)
     {
@@ -34,5 +35,14 @@ public class TypeAlgee : Type {
         {
             tile.SetType(listOfTypes.types[ListOfTypes.SOIL]);
         }
+
+        int ra = Random.Range(0, colors.Count);
+        tile.SetSprite(sprite, colors[ra]);
+    }
+
+    public override void FirstUppdate(Tile t)
+    {
+        int ra = Random.Range(0, colors.Count);
+        t.SetSprite(sprite, colors[ra]);
     }
 }
