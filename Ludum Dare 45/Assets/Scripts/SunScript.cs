@@ -39,7 +39,7 @@ public class SunScript : MonoBehaviour {
         if (first)
         {
             timer += Time.deltaTime;
-            if(transform.position.y <= 0.01 - Radius)
+            if(transform.position.y <= 0.000001f - Radius)
             {
                 first = false;
                 dur = timer;

@@ -29,9 +29,13 @@ public class InputHandler : MonoBehaviour {
     public AudioClip animalAudio;
     public AudioClip plasmaAudio;
 
+    public GameObject popUpBox;
+
+    public Color disabledColor;
+
     // Use this for initialization
     void Start () {
-		
+
 	}
 
     void Update()
@@ -73,6 +77,14 @@ public class InputHandler : MonoBehaviour {
                 //Debug.Log(hit.transform.name);
             }
         }
+
+        Vector3 mousePos2 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit2 = Physics2D.Raycast(mousePos2, Vector2.zero);
+
+        if (hit2.collider != null)
+        {
+            hit2.transform.gameObject.GetComponent<Tile>().Highlight(brushSize);
+        }
     }
 
     public void MenuPressed()
@@ -86,9 +98,11 @@ public class InputHandler : MonoBehaviour {
         if (previousButton != null)
         {
             previousButton.interactable = true;
+            previousButton.GetComponent<Image>().color = Color.white;
         }
         previousButton = b;
         previousButton.interactable = false;
+        previousButton.GetComponent<Image>().color = disabledColor;
         type = t;
     }
 
@@ -146,5 +160,17 @@ public class InputHandler : MonoBehaviour {
     {
         audio.clip = select;
         audio.Play();
+    }
+
+    public void PopUpClicked()
+    {
+        if (popUpBox.active)
+        {
+            popUpBox.active = false;
+        }
+        else
+        {
+            popUpBox.active = true;
+        }
     }
 }

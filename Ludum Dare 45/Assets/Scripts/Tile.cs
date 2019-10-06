@@ -18,10 +18,46 @@ public class Tile : MonoBehaviour {
 
     public float typeCounter;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
+    public GameObject shadow;
+
+    private int shadowTimer = 0;
+
+
+    public void Highlight(int brush)
+    {
+        shadow.active = true;
+        shadowTimer = 1;
+        if (brush > 1)
+        {
+            for (int i = 0; i < neighbours.Length; i++)
+            {
+                if (neighbours[i].type.typeId != "B")
+                {
+                    neighbours[i].SetHighligth(brush - 1);
+                }
+
+            }
+        }
+    }
+
+    public void SetHighligth(int brush)
+    {
+        shadow.active = true;
+        shadowTimer = 1;
+        if (brush > 1)
+        {
+            for (int i = 0; i < neighbours.Length; i++)
+            {
+                if (neighbours[i].type.typeId != "B")
+                {
+                    neighbours[i].SetHighligth( brush - 1);
+                }
+
+            }
+        }
+    }
+
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -33,6 +69,18 @@ public class Tile : MonoBehaviour {
             type.UpdateTile(this, neighbours);
             
             timer = 0;
+        }
+        if (shadow.active)
+        {
+            if(shadowTimer == 1)
+            {
+                shadowTimer--;
+            }
+            else
+            {
+                shadow.active = false;
+            }
+
         }
 	}
 
